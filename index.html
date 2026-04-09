@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王一博 | 演员·歌手·舞者·赛车手</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans SC', sans-serif; }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #4c1d95, #7c3aed, #a855f7);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-anim { animation: float 6s ease-in-out infinite; }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden">
+
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="font-bold text-2xl tracking-wider text-white">WANG YIBO</div>
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#about" class="hover:text-purple-400 transition">关于</a>
+                    <a href="#career" class="hover:text-purple-400 transition">演艺经历</a>
+                    <a href="#works" class="hover:text-purple-400 transition">代表作品</a>
+                    <a href="#racing" class="hover:text-purple-400 transition">赛车</a>
+                    <a href="#awards" class="hover:text-purple-400 transition">荣誉</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/95 backdrop-blur-xl border-t border-gray-800">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#about" class="block text-gray-300 hover:text-white transition">关于</a>
+                <a href="#career" class="block text-gray-300 hover:text-white transition">演艺经历</a>
+                <a href="#works" class="block text-gray-300 hover:text-white transition">代表作品</a>
+                <a href="#racing" class="block text-gray-300 hover:text-white transition">赛车</a>
+                <a href="#awards" class="block text-gray-300 hover:text-white transition">荣誉</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden">
+        <!-- 背景装饰 -->
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-20 left-20 w-72 h-72 bg-purple-500 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 right-20 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center pt-20">
+            <!-- 左侧内容 -->
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm">
+                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                    多栖艺人 · 职业赛车手
+                </div>
+                
+                <h1 class="text-6xl md:text-8xl font-bold leading-none">
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-purple-400 text-glow">王一博</span>
+                    <span class="block text-2xl md:text-3xl font-light text-purple-300 mt-4 tracking-widest">WANG YIBO</span>
+                </h1>
+
+                <p class="text-xl text-gray-300 leading-relaxed max-w-lg">
+                    中国内地男演员、歌手、舞者、主持人、职业摩托车赛车手。UNIQ组合成员，凭借《陈情令》蓝忘机一角广为人知，后在《这就是街舞》展现顶尖舞蹈实力。
+                </p>
+
+                <div class="flex flex-wrap gap-4">
+                    <span class="px-4 py-2 bg-purple-500/20 border border-purple-500/50 rounded-full text-sm text-purple-300">
+                        <i class="fas fa-film mr-2"></i>演员
+                    </span>
+                    <span class="px-4 py-2 bg-blue-500/20 border border-blue-500/50 rounded-full text-sm text-blue-300">
+                        <i class="fas fa-music mr-2"></i>歌手
+                    </span>
+                    <span class="px-4 py-2 bg-pink-500/20 border border-pink-500/50 rounded-full text-sm text-pink-300">
+                        <i class="fas fa-dance mr-2"></i>舞者
+                    </span>
+                    <span class="px-4 py-2 bg-red-500/20 border border-red-500/50 rounded-full text-sm text-red-300">
+                        <i class="fas fa-motorcycle mr-2"></i>赛车手
+                    </span>
+                </div>
+
+                <div class="grid grid-cols-4 gap-6 pt-6 border-t border-white/20">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-white">1997</div>
+                        <div class="text-xs text-gray-400 mt-1">出生年份</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-white">180<span class="text-sm">cm</span></div>
+                        <div class="text-xs text-gray-400 mt-1">身高</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-white">85</div>
+                        <div class="text-xs text-gray-400 mt-1">赛车号</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-white">洛阳</div>
+                        <div class="text-xs text-gray-400 mt-1">籍贯</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 右侧头像 -->
+            <div class="relative flex justify-center float-anim">
+                <div class="relative w-80 h-80 md:w-96 md:h-96">
+                    <!-- 装饰圆环 -->
+                    <div class="absolute inset-0 rounded-full border-2 border-purple-500/30 animate-pulse"></div>
+                    <div class="absolute -inset-4 rounded-full border border-purple-400/20 animate-ping" style="animation-duration: 3s;"></div>
+                    
+                    <!-- 头像 -->
+                    <div class="absolute inset-0 rounded-full overflow-hidden shadow-2xl bg-gradient-to-br from-purple-500 to-blue-600 ring-4 ring-white/10">
+                        <img src="https://c-ssl.dtstatic.com/uploads/blog/202308/01/0GSw4DWvT0Q5We3.thumb.400_0.jpg" 
+                             alt="王一博" 
+                             class="w-full h-full object-cover object-[90%_20%]  hover:scale-110 transition-transform duration-700">
+                    </div>
+                    
+                    <!-- 浮动标签 -->
+                    <div class="absolute -right-4 top-20 bg-white text-purple-900 px-4 py-2 rounded-xl shadow-xl text-sm font-bold animate-bounce" style="animation-duration: 3s;">
+                        <i class="fas fa-star text-yellow-500 mr-2"></i>顶流艺人
+                    </div>
+                    <div class="absolute -left-4 bottom-20 bg-purple-500/80 backdrop-blur-md text-white px-4 py-2 rounded-xl text-sm font-medium" style="animation: float 4s ease-in-out infinite; animation-delay: 1s;">
+                        <i class="fas fa-trophy mr-2"></i>全能偶像
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </header>
+
+    <!-- 演艺经历时间线 -->
+    <section id="career" class="py-24 bg-gray-900 relative">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">演艺经历</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="relative">
+                <div class="timeline-line"></div>
+
+                <!-- 2014 出道 -->
+                <div class="relative mb-12 reveal">
+                    <div class="flex items-center justify-center mb-4">
+                        <div class="w-4 h-4 bg-purple-500 rounded-full border-4 border-gray-900 z-10"></div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-2xl border border-gray-700 max-w-2xl mx-auto text-center">
+                        <div class="text-purple-400 font-bold text-lg mb-2">2014</div>
+                        <h3 class="text-xl font-bold mb-2">UNIQ组合出道</h3>
+                        <p class="text-gray-400 text-sm">以UNIQ组合成员身份正式出道，担任主舞、Rap担当</p>
+                    </div>
+                </div>
+
+                <!-- 2016 天天向上 -->
+                <div class="relative mb-12 reveal">
+                    <div class="flex items-center justify-center mb-4">
+                        <div class="w-4 h-4 bg-blue-500 rounded-full border-4 border-gray-900 z-10"></div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-2xl border border-gray-700 max-w-2xl mx-auto text-center">
+                        <div class="text-blue-400 font-bold text-lg mb-2">2016</div>
+                        <h3 class="text-xl font-bold mb-2">《天天向上》主持人</h3>
+                        <p class="text-gray-400 text-sm">加入湖南卫视《天天向上》主持团，成为"天天兄弟"成员</p>
+                    </div>
+                </div>
+
+                <!-- 2019 陈情令爆红 -->
+                <div class="relative mb-12 reveal">
+                    <div class="flex items-center justify-center mb-4">
+                        <div class="w-4 h-4 bg-pink-500 rounded-full border-4 border-gray-900 z-10"></div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-2xl border border-gray-700 max-w-2xl mx-auto text-center">
+                        <div class="text-pink-400 font-bold text-lg mb-2">2019</div>
+                        <h3 class="text-xl font-bold mb-2">《陈情令》爆红</h3>
+                        <p class="text-gray-400 text-sm">饰演蓝忘机一角，获得广泛关注，成为顶流演员</p>
+                    </div>
+                </div>
+
+                <!-- 2020 这就是街舞 -->
+                <div class="relative mb-12 reveal">
+                    <div class="flex items-center justify-center mb-4">
+                        <div class="w-4 h-4 bg-yellow-500 rounded-full border-4 border-gray-900 z-10"></div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-2xl border border-gray-700 max-w-2xl mx-auto text-center">
+                        <div class="text-yellow-400 font-bold text-lg mb-2">2020</div>
+                        <h3 class="text-xl font-bold mb-2">《这就是街舞3》冠军队长</h3>
+                        <p class="text-gray-400 text-sm">带领战队获得总冠军，展现顶尖街舞实力</p>
+                    </div>
+                </div>
+
+                <!-- 2023 电影突破 -->
+                <div class="relative reveal">
+                    <div class="flex items-center justify-center mb-4">
+                        <div class="w-4 h-4 bg-red-500 rounded-full border-4 border-gray-900 z-10"></div>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-2xl border border-gray-700 max-w-2xl mx-auto text-center">
+                        <div class="text-red-400 font-bold text-lg mb-2">2023</div>
+                        <h3 class="text-xl font-bold mb-2">电影《无名》《长空之王》</h3>
+                        <p class="text-gray-400 text-sm">转型实力派演员，获得金鸡奖提名，演技获认可</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 代表作品 -->
+    <section id="works" class="py-24 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">代表作品</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 影视作品 -->
+                <div class="card-hover bg-gray-900 rounded-3xl overflow-hidden border border-gray-700 reveal">
+                    <div class="h-48 bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-film text-6xl text-white/30"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4 text-purple-400">影视作品</h3>
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-purple-500"></i>
+                                《陈情令》饰 蓝忘机
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-purple-500"></i>
+                                《有翡》饰 谢允
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-purple-500"></i>
+                                《风起洛阳》饰 百里弘毅
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-purple-500"></i>
+                                《无名》饰 叶先生
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-purple-500"></i>
+                                《长空之王》饰 雷宇
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-purple-500"></i>
+                                《热烈》饰 陈烁
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 音乐作品 -->
+                <div class="card-hover bg-gray-900 rounded-3xl overflow-hidden border border-gray-700 reveal">
+                    <div class="h-48 bg-gradient-to-br from-pink-600 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-music text-6xl text-white/30"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4 text-pink-400">音乐作品</h3>
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-compact-disc text-pink-500"></i>
+                                《无感》
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-compact-disc text-pink-500"></i>
+                                《我的世界守则》
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-compact-disc text-pink-500"></i>
+                                《廿》
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-compact-disc text-pink-500"></i>
+                                《像阳光那样》
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-compact-disc text-pink-500"></i>
+                                《旁观者》
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-compact-disc text-pink-500"></i>
+                                《万物可爱》
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 综艺/舞蹈 -->
+                <div class="card-hover bg-gray-900 rounded-3xl overflow-hidden border border-gray-700 reveal">
+                    <div class="h-48 bg-gradient-to-br from-yellow-600 to-orange-600 flex items-center justify-center">
+                        <i class="fas fa-tv text-6xl text-white/30"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4 text-yellow-400">综艺舞蹈</h3>
+                        <ul class="space-y-3 text-sm text-gray-300">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-star text-yellow-500"></i>
+                                《天天向上》主持人
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-star text-yellow-500"></i>
+                                《创造101》舞蹈导师
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-star text-yellow-500"></i>
+                                《这就是街舞3/4/5》队长
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-star text-yellow-500"></i>
+                                《极限青春》滑板推广
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-star text-yellow-500"></i>
+                                跨年晚会舞台《无感》
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-star text-yellow-500"></i>
+                                央视春晚表演
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 赛车生涯 -->
+    <section id="racing" class="py-24 bg-gray-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'0.05\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')]"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">赛车生涯</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-red-500 to-orange-500 mx-auto rounded-full"></div>
+                <p class="text-gray-400 mt-4">职业摩托车赛车手，雅马哈签约车手</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-800 p-8 rounded-3xl border border-gray-700 reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-red-500 rounded-2xl flex items-center justify-center text-white text-2xl">
+                            <i class="fas fa-motorcycle"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">职业车手</h3>
+                            <p class="text-gray-400">万里达雅马哈车队</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <span class="w-6 h-6 bg-red-500/20 rounded-full flex items-center justify-center flex-shrink-0 text-red-400 text-xs">85</span>
+                            <span>赛车号码：85号</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-trophy text-yellow-500 mt-1"></i>
+                            <span>2019年亚洲公路摩托车锦标赛ARRC ZIC组双回合冠军</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-medal text-gray-400 mt-1"></i>
+                            <span>2020年珠海ZIC摩托车赛A组冠军</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-800 p-8 rounded-3xl border border-gray-700 reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center text-white text-2xl">
+                            <i class="fas fa-flag-checkered"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">赛车数据</h3>
+                            <p class="text-gray-400">Track Record</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gray-900 p-4 rounded-xl text-center">
+                            <div class="text-3xl font-bold text-red-400">D组</div>
+                            <div class="text-xs text-gray-500 mt-1">参赛组别</div>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-xl text-center">
+                            <div class="text-3xl font-bold text-orange-400">YZF-R25</div>
+                            <div class="text-xs text-gray-500 mt-1">座驾型号</div>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-xl text-center">
+                            <div class="text-3xl font-bold text-yellow-400">珠海</div>
+                            <div class="text-xs text-gray-500 mt-1">主场赛道</div>
+                        </div>
+                        <div class="bg-gray-900 p-4 rounded-xl text-center">
+                            <div class="text-3xl font-bold text-green-400">1:56</div>
+                            <div class="text-xs text-gray-500 mt-1">最快圈速</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 荣誉奖项 -->
+    <section id="awards" class="py-24 bg-gray-800">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl font-bold mb-4">荣誉奖项</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="bg-gray-900 rounded-3xl overflow-hidden border border-gray-700 reveal">
+                <table class="w-full">
+                    <thead class="bg-gradient-to-r from-purple-600 to-pink-600">
+                        <tr>
+                            <th class="px-6 py-4 text-left font-semibold">年份</th>
+                            <th class="px-6 py-4 text-left font-semibold">奖项</th>
+                            <th class="px-6 py-4 text-left font-semibold">类别</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-800">
+                        <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="px-6 py-4 text-purple-400 font-bold">2023</td>
+                            <td class="px-6 py-4">第20届电影频道传媒关注单元最受传媒关注男主角</td>
+                            <td class="px-6 py-4"><span class="px-2 py-1 bg-red-500/20 text-red-400 rounded text-xs">电影</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="px-6 py-4 text-purple-400 font-bold">2023</td>
+                            <td class="px-6 py-4">金鸡奖最佳男配角提名（《无名》）</td>
+                            <td class="px-6 py-4"><span class="px-2 py-1 bg-red-500/20 text-red-400 rounded text-xs">电影</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="px-6 py-4 text-purple-400 font-bold">2020</td>
+                            <td class="px-6 py-4">第30届中国电视金鹰奖观众喜爱的男演员</td>
+                            <td class="px-6 py-4"><span class="px-2 py-1 bg-blue-500/20 text-blue-400 rounded text-xs">电视</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="px-6 py-4 text-purple-400 font-bold">2020</td>
+                            <td class="px-6 py-4">新浪微博之夜微博年度男神</td>
+                            <td class="px-6 py-4"><span class="px-2 py-1 bg-pink-500/20 text-pink-400 rounded text-xs">人气</span></td>
+                        </tr>
+                        <tr class="hover:bg-gray-800/50 transition-colors">
+                            <td class="px-6 py-4 text-purple-400 font-bold">2019</td>
+                            <td class="px-6 py-4">腾讯视频星光大赏年度人气电视剧演员</td>
+                            <td class="px-6 py-4"><span class="px-2 py-1 bg-yellow-500/20 text-yellow-400 rounded text-xs">人气</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="py-12 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="flex justify-center gap-6 mb-6">
+                <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-purple-600 hover:text-white transition">
+                    <i class="fab fa-weibo text-xl"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-green-600 hover:text-white transition">
+                    <i class="fab fa-weixin text-xl"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-pink-600 hover:text-white transition">
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="#" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition">
+                    <i class="fab fa-twitter text-xl"></i>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm">© 2024 王一博 Wang Yibo. All rights reserved.</p>
+            <p class="text-gray-600 text-xs mt-2">本页面仅供学习交流使用</p>
+        </div>
+    </footer>
+
+    <script>
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-gray-900/95', 'backdrop-blur-md');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-gray-900/95', 'backdrop-blur-md');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+
+        // 移动端菜单
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // 滚动显示动画
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
